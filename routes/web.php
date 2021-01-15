@@ -24,6 +24,11 @@ Route::post('/login', 'clientController@getlog');
 Route::get('/logout', 'logoutController@index');
 
 
+Route::get('/sendmail', 'homeController@testmail');
+
+
+
+
 
 Route::group(['middleware'=>['check']], function(){
 

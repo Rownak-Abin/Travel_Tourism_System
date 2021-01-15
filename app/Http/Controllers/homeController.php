@@ -77,11 +77,32 @@ class homeController extends Controller
 						);
         	}
 
+
+
+        $details = [
+
+				'title' => 'Tour Request at RownakTravel.com',
+				'body' => 'Your request for '.$req->tour.' package is being proceed.',
+				'name' => $req->name
+
+		];
+
+		\Mail::to($req->email)->send(new \App\Mail\testmail($details));
+
+
         	return back();
     }
 
 }
 
+
+	public function testmail(){
+
+
+
+		echo "Seccessfully Done";
+
+	}
 
 
 }
